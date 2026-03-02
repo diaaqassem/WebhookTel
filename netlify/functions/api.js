@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 const express = require("express");
 const axios = require("axios");
 const serverless = require("serverless-http");
@@ -39,3 +39,4 @@ app.post("/pingdom", async (req, res) => {
 });
 
 module.exports.handler = serverless(app);
+
