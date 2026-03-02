@@ -1,4 +1,4 @@
-// require("dotenv").config();
+require("dotenv").config();
 const express = require("express");
 const axios = require("axios");
 const serverless = require("serverless-http");
@@ -6,7 +6,7 @@ const serverless = require("serverless-http");
 const app = express();
 app.use(express.json());
 
-app.post("/pingdom", async (req, res) => {
+app.post("/", async (req, res) => {
   const alert = req.body;
 
   if (!alert || !alert.check_name || !alert.current_state) {
@@ -39,4 +39,5 @@ app.post("/pingdom", async (req, res) => {
 });
 
 module.exports.handler = serverless(app);
+
 
